@@ -6,7 +6,7 @@ A cool animated RecyclerView clock face scroller handle inspired by the followin
 
 * Scroll handle shows animated clock face when scrolling
 * Clock face animates to hours
-* Still a WORK IN PROGRESS so please submit a pull request if you can improve/find bugs! :-)
+* Still a **WORK IN PROGRESS** so please submit a pull request if you can improve/find bugs! :-)
 
 <p>
 <a href="https://play.google.com/store/apps/details?id=uk.co.barbuzz.clockscroller.sample"><img src="https://github.com/andyb129/ClockScroller/blob/master/screenshots%2Fgoogle_play_badge.png" height="80" width="210" alt="ClockScroller"/></a>
