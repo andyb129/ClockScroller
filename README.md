@@ -61,7 +61,7 @@ public Date getDateFromAdapter(int pos) {
 }
 ```
 
-Then create your RecyclerView instance and create a FastScroller instance and pass in the RecyclerView to it e.g.
+Then create your RecyclerView instance with a FastScroller instance and pass in the RecyclerView to it e.g.
 
 ```
 mContactsRecyclerView = (RecyclerView) findViewById(R.id.contacts_recycler_view);
