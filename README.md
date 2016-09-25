@@ -42,7 +42,7 @@ Alternatively you can directly import the /library project into your Android Stu
 The library is currently configured to be built via Gradle only. It has the following dependencies:
 
 * RecyclerView              - com.android.support:recyclerview-v7
-* Compiled SDK Version      - marshmallow-24
+* Compiled SDK Version      - nougat-24
 * Minimum SDK Version       - jelly bean-16
 
 ### Usage
