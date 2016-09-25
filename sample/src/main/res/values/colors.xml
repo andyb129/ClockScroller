@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- main theme -->
+    <color name="colorPrimary">#8160c7</color>
+    <color name="colorPrimaryDark">#6b44bd</color>
+    <color name="colorAccent">#8BC34A</color>
+
+    <!-- others -->
+    <color name="text_row">#977dd2</color>
+    <color name="clock_edge">#ffffff</color>
+</resources>

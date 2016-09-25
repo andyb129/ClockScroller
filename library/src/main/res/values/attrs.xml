@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ClockScroller">
+        <attr name="clockEdgeColor" format="color"/>
+        <attr name="clockFaceColor" format="color"/>
+        <attr name="clockScrollBarColor" format="color"/>
+        <attr name="clockScrollBarSelectedColor" format="color"/>
+        <attr name="clockLineWidth" format="dimension"/>
+    </declare-styleable>
+
+</resources>
