@@ -15,7 +15,7 @@ A cool animated RecyclerView clock face scroller handle inspired by the followin
 <img src="https://github.com/andyb129/ClockScroller/blob/master/screenshots%2Fclock_scroller_anim.gif" height="600" alt="ClockScroller"/>
 </p>
   
-<!--![optional caption text](screenshots/beer_progress_view_anim.gif)-->
+<!--![optional caption text](screenshots/clock_scroller_anim.gif)-->
 
 ### Setup
 To use **Clock Scroller** in your projects, simply add the library as a dependency to your build.
@@ -31,7 +31,7 @@ dependencies {
 ```
 <dependency>
   <groupId>uk.co.barbuzz.clockscroller</groupId>
-  <artifactId>beerprogressview</artifactId>
+  <artifactId>clockscroller</artifactId>
   <version>0.0.1</version>
   <type>pom</type>
 </dependency>
