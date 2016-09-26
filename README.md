@@ -23,7 +23,7 @@ To use **Clock Scroller** in your projects, simply add the library as a dependen
 ##### Gradle
 ```
 dependencies {
-  compile 'uk.co.barbuzz:clockscroller:0.0.1'
+  compile 'uk.co.barbuzz:clockscroller:0.0.2'
 }
 ```
 
@@ -32,7 +32,7 @@ dependencies {
 <dependency>
   <groupId>uk.co.barbuzz.clockscroller</groupId>
   <artifactId>clockscroller</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <type>pom</type>
 </dependency>
 ```
