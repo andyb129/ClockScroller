@@ -42,6 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         FastScroller fastScroller = (FastScroller) findViewById(R.id.fast_scroller_view);
+
+        /*
+        //use the following to style the scroll bar & clock handle programmatically if needed
+        fastScroller.setClockEdgeColor(getResources().getColor(R.color.clock_edge));
+        fastScroller.setClockFaceColor(getResources().getColor(android.R.color.transparent));
+        fastScroller.setClockLineWidth(getResources().getDimension(R.dimen.clock_stroke_width));
+        fastScroller.setClockScrollBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        fastScroller.setClockScrollBarSelectedColor(getResources().getColor(R.color.text_row));
+        */
+
         fastScroller.setRecyclerView(mContactsRecyclerView);
     }
 

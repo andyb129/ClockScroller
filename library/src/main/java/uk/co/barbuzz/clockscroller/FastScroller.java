@@ -90,39 +90,6 @@ public class FastScroller extends LinearLayout implements Subscriber {
         }
     }
 
-    private void initialise(Context context) {
-        setOrientation(HORIZONTAL);
-        setClipChildren(false);
-
-        LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.fastscroller, this, true);
-
-        bubbleLayout = (LinearLayout) findViewById(R.id.fastscroller_bubble_layout);
-        bubble = (ImageView) findViewById(R.id.fastscroller_bubble);
-        handle = (ImageView) findViewById(R.id.fastscroller_handle);
-        handleText = (TextView) findViewById(R.id.fastscroller_text);
-
-        StateListDrawable states = new StateListDrawable();
-        GradientDrawable drawable = (GradientDrawable) getResources().getDrawable(R.drawable.fastscroller_handle_shape);
-        GradientDrawable drawableSelected = (GradientDrawable) getResources().getDrawable(R.drawable.fastscroller_handle_shape);
-        drawable.setColor(clockScrollBarColor);
-        drawableSelected.setColor(clockScrollBarSelectedColor);
-        states.addState(new int[] {android.R.attr.state_pressed}, drawableSelected);
-        states.addState(new int[] { }, drawable);
-        handle.setImageDrawable(states);
-
-        //set initial clock drawable as scroll handle
-        clockDrawable = new ClockDrawable();
-        clockDrawable.setFaceColor(clockFaceColor);
-        clockDrawable.setRimColor(clockEdgeColor);
-        clockDrawable.setAnimateDays(false);
-        bubble.setImageDrawable(clockDrawable);
-
-        bubbleLayout.setVisibility(INVISIBLE);
-
-        handleText.setTextColor(clockEdgeColor);
-    }
-
     // CALLBACKs ___________________________________________________________________________________
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -168,6 +135,44 @@ public class FastScroller extends LinearLayout implements Subscriber {
         }
 
         return super.onTouchEvent(event);
+    }
+
+    private void initialise(Context context) {
+        setOrientation(HORIZONTAL);
+        setClipChildren(false);
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        inflater.inflate(R.layout.fastscroller, this, true);
+
+        bubbleLayout = (LinearLayout) findViewById(R.id.fastscroller_bubble_layout);
+        bubble = (ImageView) findViewById(R.id.fastscroller_bubble);
+        handle = (ImageView) findViewById(R.id.fastscroller_handle);
+        handleText = (TextView) findViewById(R.id.fastscroller_text);
+
+        setScrollBarColors(clockScrollBarColor, clockScrollBarSelectedColor);
+
+        //set initial clock drawable as scroll handle
+        clockDrawable = new ClockDrawable();
+        clockDrawable.setFaceColor(clockFaceColor);
+        clockDrawable.setRimColor(clockEdgeColor);
+        clockDrawable.setClockLineWidth(clockLineWidth);
+        clockDrawable.setAnimateDays(false);
+        bubble.setImageDrawable(clockDrawable);
+
+        bubbleLayout.setVisibility(INVISIBLE);
+
+        handleText.setTextColor(clockEdgeColor);
+    }
+
+    private void setScrollBarColors(int clockScrollBarColor, int clockScrollBarSelectedColor) {
+        StateListDrawable states = new StateListDrawable();
+        GradientDrawable drawable = (GradientDrawable) getResources().getDrawable(R.drawable.fastscroller_handle_shape);
+        GradientDrawable drawableSelected = (GradientDrawable) getResources().getDrawable(R.drawable.fastscroller_handle_shape);
+        drawable.setColor(clockScrollBarColor);
+        drawableSelected.setColor(clockScrollBarSelectedColor);
+        states.addState(new int[] {android.R.attr.state_pressed}, drawableSelected);
+        states.addState(new int[] { }, drawable);
+        handle.setImageDrawable(states);
     }
 
     // GETTERS AND SETTERS _________________________________________________________________________
@@ -280,6 +285,64 @@ public class FastScroller extends LinearLayout implements Subscriber {
             float proportion = (float) position / (float) itemCount;
 
             setBubbleAndHandlePosition(getFastScrollHeight() * proportion);
+        }
+    }
+
+    /** getters and setters */
+
+    public int getClockEdgeColor() {
+        return clockEdgeColor;
+    }
+
+    public void setClockEdgeColor(int clockEdgeColor) {
+        this.clockEdgeColor = clockEdgeColor;
+        if (clockDrawable!=null) {
+            clockDrawable.setRimColor(clockEdgeColor);
+        }
+        if (handleText!=null) {
+            handleText.setTextColor(clockEdgeColor);
+        }
+    }
+
+    public int getClockFaceColor() {
+        return clockFaceColor;
+    }
+
+    public void setClockFaceColor(int clockFaceColor) {
+        this.clockFaceColor = clockFaceColor;
+        if (clockDrawable!=null) {
+            clockDrawable.setFaceColor(clockFaceColor);
+        }
+    }
+
+    public float getClockLineWidth() {
+        return clockLineWidth;
+    }
+
+    public void setClockLineWidth(float clockLineWidth) {
+        this.clockLineWidth = clockLineWidth;
+        clockDrawable.setClockLineWidth(clockLineWidth);
+    }
+
+    public int getClockScrollBarColor() {
+        return clockScrollBarColor;
+    }
+
+    public void setClockScrollBarColor(int clockScrollBarColor) {
+        this.clockScrollBarColor = clockScrollBarColor;
+        if (handle!=null) {
+            setScrollBarColors(clockScrollBarColor, clockScrollBarSelectedColor);
+        }
+    }
+
+    public int getClockScrollBarSelectedColor() {
+        return clockScrollBarSelectedColor;
+    }
+
+    public void setClockScrollBarSelectedColor(int clockScrollBarSelectedColor) {
+        this.clockScrollBarSelectedColor = clockScrollBarSelectedColor;
+        if (handle!=null) {
+            setScrollBarColors(clockScrollBarColor, clockScrollBarSelectedColor);
         }
     }
 }

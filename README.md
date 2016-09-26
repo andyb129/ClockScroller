@@ -73,6 +73,34 @@ FastScroller fastScroller = (FastScroller) findViewById(R.id.fast_scroller_view)
 fastScroller.setRecyclerView(mContactsRecyclerView);
 ```
 
+You'll also need to add the `FastScroller` view below your `RecyclerView` as a custom view to your layout e.g.
+
+```
+<uk.co.barbuzz.clockscroller.FastScroller
+        android:id="@+id/fast_scroller_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentRight="true"
+        android:visibility="visible"
+        app:clockFaceColor="@android:color/transparent"
+        app:clockEdgeColor="@color/clock_edge"
+        app:clockScrollBarColor="@color/colorPrimaryDark"
+        app:clockScrollBarSelectedColor="@color/text_row"/>
+```
+
+You can then either set the view parameters in xml as above or do it programmatically e.g.
+
+```
+FastScroller fastScroller = (FastScroller) findViewById(R.id.fast_scroller_view);
+fastScroller.setClockEdgeColor(getResources().getColor(R.color.clock_edge));
+fastScroller.setClockFaceColor(getResources().getColor(android.R.color.transparent));
+fastScroller.setClockLineWidth(getResources().getDimension(R.dimen.clock_stroke_width));
+fastScroller.setClockScrollBarColor(getResources().getColor(R.color.colorPrimaryDark));
+fastScroller.setClockScrollBarSelectedColor(getResources().getColor(R.color.text_row));
+```
+
 ### TODO
 1. Work out how to add minutes to the scrolling clock
 2. Iron out any bugs
