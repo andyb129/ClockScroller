@@ -1,5 +1,7 @@
 # Clock Scroller
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ClockScroller-green.svg?style=true)](https://android-arsenal.com/details/1/4410)
+
 A cool animated RecyclerView clock face scroller handle inspired by the following [MaterialUp](https://material.uplabs.com/) submission ~>
 
 <a href="https://material.uplabs.com/posts/codepen-scrolling-clock">https://material.uplabs.com/posts/codepen-scrolling-clock</a>
