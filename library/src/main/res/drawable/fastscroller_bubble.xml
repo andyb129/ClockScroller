@@ -6,11 +6,11 @@
         android:bottomLeftRadius="44dp"
         android:bottomRightRadius="0px"
         android:topLeftRadius="44dp"
-        android:topRightRadius="44dp" />
+        android:topRightRadius="44dp"/>
 
-    <solid android:color="#8a8a8a" />
+    <solid android:color="#8a8a8a"/>
 
     <size
         android:width="88dp"
-        android:height="88dp" />
+        android:height="88dp"/>
 </shape>

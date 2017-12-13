@@ -19,7 +19,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private Context context;
     private List<CalendarTimeSlot> dataSet;
 
-    public RecyclerViewAdapter (List<CalendarTimeSlot> contacts, Context c) {
+    public RecyclerViewAdapter(List<CalendarTimeSlot> contacts, Context c) {
         this.dataSet = contacts;
         this.context = c;
     }
@@ -29,7 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.element_calendar_row, parent, false);
 
-        return new ContactsViewHolder (view);
+        return new ContactsViewHolder(view);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public Date getDateFromAdapter(int pos) {
         Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.HOUR_OF_DAY, Integer.valueOf(dataSet.get(pos).time.substring(0,2)));
+        cal.set(Calendar.HOUR_OF_DAY, Integer.valueOf(dataSet.get(pos).time.substring(0, 2)));
         cal.set(Calendar.MINUTE, 0);
         return cal.getTime();
     }
@@ -57,9 +57,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public class ContactsViewHolder extends RecyclerView.ViewHolder {
         TextView time;
 
-        public ContactsViewHolder (View v) {
-            super (v);
-            time = (TextView) v.findViewById(R.id.element_calendar_row_time_text);
+        public ContactsViewHolder(View v) {
+            super(v);
+            time = v.findViewById(R.id.element_calendar_row_time_text);
         }
     }
 }

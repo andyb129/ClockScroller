@@ -144,10 +144,10 @@ public class FastScroller extends LinearLayout implements Subscriber {
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.fastscroller, this, true);
 
-        bubbleLayout = (LinearLayout) findViewById(R.id.fastscroller_bubble_layout);
-        bubble = (ImageView) findViewById(R.id.fastscroller_bubble);
-        handle = (ImageView) findViewById(R.id.fastscroller_handle);
-        handleText = (TextView) findViewById(R.id.fastscroller_text);
+        bubbleLayout = findViewById(R.id.fastscroller_bubble_layout);
+        bubble = findViewById(R.id.fastscroller_bubble);
+        handle = findViewById(R.id.fastscroller_handle);
+        handleText = findViewById(R.id.fastscroller_text);
 
         setScrollBarColors(clockScrollBarColor, clockScrollBarSelectedColor);
 
@@ -170,8 +170,8 @@ public class FastScroller extends LinearLayout implements Subscriber {
         GradientDrawable drawableSelected = (GradientDrawable) getResources().getDrawable(R.drawable.fastscroller_handle_shape);
         drawable.setColor(clockScrollBarColor);
         drawableSelected.setColor(clockScrollBarSelectedColor);
-        states.addState(new int[] {android.R.attr.state_pressed}, drawableSelected);
-        states.addState(new int[] { }, drawable);
+        states.addState(new int[]{android.R.attr.state_pressed}, drawableSelected);
+        states.addState(new int[]{}, drawable);
         handle.setImageDrawable(states);
     }
 
@@ -288,7 +288,9 @@ public class FastScroller extends LinearLayout implements Subscriber {
         }
     }
 
-    /** getters and setters */
+    /**
+     * getters and setters
+     */
 
     public int getClockEdgeColor() {
         return clockEdgeColor;
@@ -296,10 +298,10 @@ public class FastScroller extends LinearLayout implements Subscriber {
 
     public void setClockEdgeColor(int clockEdgeColor) {
         this.clockEdgeColor = clockEdgeColor;
-        if (clockDrawable!=null) {
+        if (clockDrawable != null) {
             clockDrawable.setRimColor(clockEdgeColor);
         }
-        if (handleText!=null) {
+        if (handleText != null) {
             handleText.setTextColor(clockEdgeColor);
         }
     }
@@ -310,7 +312,7 @@ public class FastScroller extends LinearLayout implements Subscriber {
 
     public void setClockFaceColor(int clockFaceColor) {
         this.clockFaceColor = clockFaceColor;
-        if (clockDrawable!=null) {
+        if (clockDrawable != null) {
             clockDrawable.setFaceColor(clockFaceColor);
         }
     }
@@ -330,7 +332,7 @@ public class FastScroller extends LinearLayout implements Subscriber {
 
     public void setClockScrollBarColor(int clockScrollBarColor) {
         this.clockScrollBarColor = clockScrollBarColor;
-        if (handle!=null) {
+        if (handle != null) {
             setScrollBarColors(clockScrollBarColor, clockScrollBarSelectedColor);
         }
     }
@@ -341,7 +343,7 @@ public class FastScroller extends LinearLayout implements Subscriber {
 
     public void setClockScrollBarSelectedColor(int clockScrollBarSelectedColor) {
         this.clockScrollBarSelectedColor = clockScrollBarSelectedColor;
-        if (handle!=null) {
+        if (handle != null) {
             setScrollBarColors(clockScrollBarColor, clockScrollBarSelectedColor);
         }
     }

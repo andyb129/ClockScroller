@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mContactsRecyclerView = (RecyclerView) findViewById(R.id.contacts_recycler_view);
+        mContactsRecyclerView = findViewById(R.id.contacts_recycler_view);
         mContactsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<CalendarTimeSlot> calendarTimeSlotsList = new ArrayList<>();
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         mContactsRecyclerView.setAdapter(mAdapter);
 
 
-        FastScroller fastScroller = (FastScroller) findViewById(R.id.fast_scroller_view);
+        FastScroller fastScroller = findViewById(R.id.fast_scroller_view);
 
         /*
         //use the following to style the scroll bar & clock handle programmatically if needed

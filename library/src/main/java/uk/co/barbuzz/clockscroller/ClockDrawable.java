@@ -227,7 +227,7 @@ public class ClockDrawable extends Drawable implements Animatable {
     public void start(Date newTime) {
         long diff = newTime.getTime() - previousTime.getTime();//as given
         long minDiff = TimeUnit.MILLISECONDS.toMinutes(diff);
-        if (minDiff==-59) minDiff=-60;
+        if (minDiff == -59) minDiff = -60;
         Log.i(TAG, "diff mins  - " + minDiff);
 
         // 60min ... 360grade
